@@ -1,0 +1,29 @@
+ table, th, td {
+            font-family: Dancing Script, cursive;
+            border: 1px solid purple;
+            background: #ffe6f2;
+        }
+
+        td{
+            width: 10%;
+        }
+
+        .p{
+            background-color: #ebccff;
+        }
+
+        .missing{
+            background-color: #ccffff;
+        }
+
+        .empty{
+            background-color: #ffcccc;
+        }
+
+        .me{
+            background-color: #8c548f;
+        }
+
+        .tanar{
+            background-color: #47b2db;
+        }
