@@ -1,5 +1,4 @@
-
-		<table>
+<table>
 			<tr>
 				<th colspan="3">
 					<h2>Ülésrend</h2>
@@ -10,7 +9,7 @@
 				if(!empty($_SESSION["id"])) {
 					if(in_array($_SESSION["id"], $adminok)) {
 						?>
-						<form action="ulesrend.php" method="post">
+						<form action="index.php?page=ulesrend" method="post">
 						Hiányzó: 	<select name="hianyzo_id">
 									<?php
 

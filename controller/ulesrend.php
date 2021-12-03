@@ -14,7 +14,7 @@ elseif(!empty($_GET['nem_hianyzo'])) {
 
 $hianyzok = $hianyzo->lista($conn);
 
-$admin = new Adminok();
+$admin = new Admin();
 
 $adminok = $admin->lista($conn);
 
@@ -26,4 +26,3 @@ $tanar = 17;
 $tanuloIdk = $tanulo->tanulokListaja($conn);
 
 include 'view/ulesrend.php';
-?>
