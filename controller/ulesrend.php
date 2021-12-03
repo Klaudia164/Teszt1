@@ -1,7 +1,8 @@
+
 <?php
 // form feldolgozása
 require 'model/Hianyzo.php';
-require 'model/Admin.php';
+require 'model/Adminok.php';
 
 $hianyzo = new Hianyzo();
 
@@ -14,15 +15,16 @@ elseif(!empty($_GET['nem_hianyzo'])) {
 
 $hianyzok = $hianyzo->lista($conn);
 
-$admin = new Admin();
+$admin = new Adminok();
 
 $adminok = $admin->lista($conn);
 
-$en = 0;
+$en = 11;
 if(!empty($_SESSION["id"])) $en = $_SESSION["id"];
 
-$tanar = 17;
+$tanar = 15;
 
 $tanuloIdk = $tanulo->tanulokListaja($conn);
+
 
 include 'view/ulesrend.php';
