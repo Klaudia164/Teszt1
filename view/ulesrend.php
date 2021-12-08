@@ -48,8 +48,20 @@
 						else {
 							$plusz = '';
 							if(in_array($row, $hianyzok)) $plusz .=  ' class="missing"';
-							if($row == $en) $plusz .=  ' id="me"';
-							if($row == $tanar) $plusz .=  ' colspan="2"';
+							if($row == $en and !empty($_SESSION["id"])){
+								$plusz .= ' class="me"';
+								
+							}
+							$fname = "uploads/".$tanulo->get_id();
+							if(file_exists($fname.".jpg")){
+								$plusz .= ' style="background-image: url('.$fname.'.jpg); background-size: contain; background-repeat:no-repeat;"';
+							}
+							else if(file_exists($fname.".jpeg")){
+								$plusz .= ' style="background-image: url('.$fname.'.jpeg); background-size: contain; background-repeat:no-repeat;"';
+							}else if(file_exists($fname.".png")){
+								$plusz .= ' style="background-image: url('.$fname.'.png); background-size: contain; background-repeat:no-repeat;"';
+							}
+							if($row == $tanar) $plusz .=  ' class="tanar" colspan="2"';
 							echo "<td".$plusz.">" . $tanulo->get_nev();
 							if(!empty($_SESSION["id"])) {
 								if(in_array($_SESSION["id"], $adminok)) {

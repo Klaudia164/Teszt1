@@ -18,10 +18,10 @@ $admin = new Admin();
 
 $adminok = $admin->lista($conn);
 
-$en = 0;
+$en = 11;
 if(!empty($_SESSION["id"])) $en = $_SESSION["id"];
 
-$tanar = 17;
+$tanar = 15;
 
 $tanuloIdk = $tanulo->tanulokListaja($conn);
 
