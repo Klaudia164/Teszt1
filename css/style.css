@@ -1,29 +1,26 @@
- table, th, td {
-            font-family: Dancing Script, cursive;
-            border: 1px solid purple;
-            background: #ffe6f2;
-        }
+table{
+	border:2px solid black;
+	background:lightgray;
+	padding:1em;
+}
+td,th{
+	border:2px solid black;
+	padding:1em;
+	text-align:center;
+	background:lightyellow;
+	font-size:1.5em;
+	font-family:  Arial, Helvetica, sans-serif;
+	width:10em;
+	height:3em;
+}
+#me{
+	color:blue;
+}
 
-        td{
-            width: 10%;
-        }
+.empty{
+	background:tomato;
+}
 
-        .p{
-            background-color: #ebccff;
-        }
-
-        .missing{
-            background-color: #ccffff;
-        }
-
-        .empty{
-            background-color: #ffcccc;
-        }
-
-        .me{
-            background-color: #8c548f;
-        }
-
-        .tanar{
-            background-color: #47b2db;
-        }
+.missing{
+	background:lightblue;
+}

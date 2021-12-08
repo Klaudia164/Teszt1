@@ -5,7 +5,7 @@
 -- Gép: 127.0.0.1
 -- Létrehozás ideje: 2021. Okt 14. 13:11
 -- Kiszolgáló verziója: 10.4.21-MariaDB
--- PHP verzió: 7.4.23
+-- PHP verzió: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `adminok` (
-  `id` int(11) UNSIGNED NOT NULL
+  `id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -36,8 +36,8 @@ CREATE TABLE `adminok` (
 --
 
 INSERT INTO `adminok` (`id`) VALUES
-(11),
-(15);
+(8),
+(17);
 
 -- --------------------------------------------------------
 
@@ -46,8 +46,16 @@ INSERT INTO `adminok` (`id`) VALUES
 --
 
 CREATE TABLE `hianyzok` (
-  `id` int(11) UNSIGNED NOT NULL
+  `id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- A tábla adatainak kiíratása `hianyzok`
+--
+
+INSERT INTO `hianyzok` (`id`) VALUES
+(5),
+(8);
 
 -- --------------------------------------------------------
 
@@ -57,7 +65,7 @@ CREATE TABLE `hianyzok` (
 
 CREATE TABLE `ulesrend` (
   `id` int(10) UNSIGNED NOT NULL,
-  `nev` varchar(100) DEFAULT NULL,
+  `nev` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `sor` tinyint(3) UNSIGNED NOT NULL,
   `oszlop` tinyint(3) UNSIGNED NOT NULL,
   `jelszo` varchar(32) CHARACTER SET latin1 NOT NULL,
@@ -69,21 +77,23 @@ CREATE TABLE `ulesrend` (
 --
 
 INSERT INTO `ulesrend` (`id`, `nev`, `sor`, `oszlop`, `jelszo`, `felhasznalonev`) VALUES
-(1, 'Kulhanek László István', 1, 1, '', ''),
+(1, 'Kulhanek László István', 1, 1, '', 'username'),
 (2, 'Molnár Gergő Máté', 2, 1, '', ''),
 (3, 'Bakcsányi Dominik', 2, 2, '', ''),
-(4, 'Füstös Lóránt', 2, 3, '', ''),
+(4, 'Füstös Loránt', 2, 3, '', ''),
 (5, 'Orosz Zsolt', 2, 4, '', ''),
 (6, 'Harsányi László Ferenc', 2, 5, '', ''),
-(7, 'Kereszturi Kevin', 3, 1, '', ''),
-(8, 'Juhász Levente', 3, 2, '', ''),
-(9, 'Szabó László', 3, 3, '', ''),
-(10, 'Sütő Dániel', 3, 4, '', ''),
-(11, 'Détári Klaudia', 3, 5, '034d46a4902efe10f0889586b31c2ed3', 'Klau'),
-(12, 'Fazekas Miklós Adrián', 4, 1, '', ''),
-(13, '', 4, 2, '', ''),
-(14, 'Gombos János', 4, 3, '', ''),
-(15, 'Tanár', 4, 4, '', '');
+(7, '', 2, 6, '', ''),
+(8, 'Kereszturi Kevin', 3, 1, '', ''),
+(9, 'Juhász Levente', 3, 2, '', ''),
+(10, 'Szabó László', 3, 3, '', ''),
+(11, 'Sütő Dániel', 3, 4, '', ''),
+(12, 'Détári Klaudia', 3, 5, '', ''),
+(13, '', 3, 6, '', ''),
+(14, 'Fazekas Miklós Adrián', 4, 1, '', ''),
+(15, '', 4, 2, '', ''),
+(16, 'Gombos János', 4, 3, '', ''),
+(17, 'Bicsák József', 4, 4, 'e10adc3949ba59abbe56e057f20f883e', 'bicsi');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -115,7 +125,7 @@ ALTER TABLE `ulesrend`
 -- AUTO_INCREMENT a táblához `ulesrend`
 --
 ALTER TABLE `ulesrend`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- Megkötések a kiírt táblákhoz
