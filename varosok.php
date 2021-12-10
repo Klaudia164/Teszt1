@@ -1,5 +1,13 @@
 <?php
 	require "includes/db.inc.php";
+	set_time_limit(500);
+	$myfile = @fopen("telepulesek.txt", "r") or die("Unable to open file!");
+
+	while(!feof($myfile)) {
+		$tempArray = explode("\t",fgets($myfile));
+		$sql = "INSERT INTO `telep` (`irsz`, `nev`) VALUES ('".$tempArray[0]."', '".$tempArray[1]."');";
+		$conn->query($sql);
+	}
 ?>
 <table>
 				<?php
